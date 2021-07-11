@@ -12,9 +12,11 @@ app.get("/api", async (req, res) => {
       "https://www.tiktok.com/@scout2015/video/6718335390845095173",
       { hdVideo: false }
     );
-    return res.json(resp);
+    console.log(resp);
+    res.json(resp);
   } catch (error) {
-    return res.send(error);
+    console.log(error);
+    res.send(error);
   }
 });
 
