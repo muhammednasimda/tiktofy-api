@@ -12,8 +12,8 @@ app.get("/api/", async (req, res) => {
       "https://www.tiktok.com/@scout2015/video/6718335390845095173",
       { noWaterMark: true }
     )
-    .catch((e) => console.log(e));
-  console.log(videoMeta);
+    .catch((e) => res.send(e));
+  return res.send(videoMeta);
 });
 
 app.listen(PORT);
