@@ -1,5 +1,5 @@
 const express = require("express");
-const tiktok = require("tiktok-scraper");
+const tiktok = require("tiktok-app-api");
 const axios = require("axios");
 const cheerio = require("cheerio");
 
@@ -7,13 +7,12 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.get("/api/", async (req, res) => {
-  const videoMeta = await tiktok
-    .getVideoMeta(
-      "https://www.tiktok.com/@scout2015/video/6718335390845095173",
-      { noWaterMark: true }
-    )
-    .catch((e) => res.send(e));
-  return res.send(videoMeta);
+  const tiktokApp = await tiktok();
+
+  const user = await tiktokApp.getUserByName("tiktok");
+  const userInfo = await tiktokApp.getUserInfo(user);
+
+  res.send(userInfo.followerCount);
 });
 
 app.listen(PORT);

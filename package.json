@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start":"node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.1",
+    "tiktok-app-api": "^1.4.1",
     "tiktok-scraper": "^1.4.33"
   }
 }
